@@ -6,7 +6,7 @@ import axios from 'axios';
 const url = "https://covid19.mathdro.id/api";
 
 function App() {
-  const [getData, setGetData] = useState([])
+  const [data, setData] = useState([])
 
   useEffect(() => {
       async function fetchData() {
@@ -17,18 +17,17 @@ function App() {
               deaths: response.data.deaths,
               lastUpdate: response.data.lastUpdate
           }
-          setGetData(allData)
+          setData(allData)
       }
       return fetchData()
   }, [])
-  console.log(getData)
 
   return (
     <div className="App">
      <h1>Covid-19 tracker!</h1>
      <div className="container">
-      <Cards />
-      <CountrySelector />
+      <CountrySelector data={data} />
+      <Cards data={data} />
      </div>     
     </div>
   );
