@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import { Cards } from './components/Cards/Cards';
 import { CountrySelector } from './components/CountrySelector/CountrySelector';
 
