@@ -1,8 +1,9 @@
 import React from 'react';
 import './style.scss';
+import CountUp from 'react-countup';
 import {Card, CardContent, Typography, Grid} from '@material-ui/core';
 
-export function Cards({ data: {confirmed, recovered, deaths, lastUpdate}}) {
+export function Cards({ data: {confirmed, recovered, deaths, lastUpdate }}) {
     if(!confirmed) {
         return 'loading..'
     }
@@ -13,8 +14,10 @@ export function Cards({ data: {confirmed, recovered, deaths, lastUpdate}}) {
                 <Grid item component={Card}>
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Infected</Typography>
-                        <Typography variant="h5">{confirmed.value}</Typography>
-                        <Typography color="textSecondary">Data</Typography>
+                        <Typography variant="h5">
+                            <CountUp start={0} duration={1.7} end={confirmed.value} separator="."/>
+                        </Typography>
+                        <Typography color="textSecondary">{lastUpdate}</Typography>
                         <Typography variant="body2">Number of cases</Typography>
                     </CardContent>
                 </Grid>
@@ -22,7 +25,9 @@ export function Cards({ data: {confirmed, recovered, deaths, lastUpdate}}) {
                 <Grid item component={Card}>
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Recovered</Typography>
-                        <Typography variant="h5">{recovered.value}</Typography>
+                        <Typography variant="h5">
+                          <CountUp start={0} duration={1.9} end={recovered.value} separator="." />
+                        </Typography>
                         <Typography color="textSecondary">Data</Typography>
                         <Typography variant="body2">Number of recovered</Typography>
                     </CardContent>
@@ -31,8 +36,10 @@ export function Cards({ data: {confirmed, recovered, deaths, lastUpdate}}) {
 
                 <Grid item component={Card}>
                     <CardContent>
-                        <Typography color="textSecondary" gutterBottom>Deaths</Typography>
-                        <Typography variant="h5">{deaths.value}</Typography>
+                        <Typography color="textSecondary" gutterBottom>Deaths</Typography>                        
+                        <Typography variant="h5">
+                          <CountUp start={0} duration={2.5} end={deaths.value} separator="." />
+                        </Typography>
                         <Typography color="textSecondary">Data</Typography>
                         <Typography variant="body2">Number of deaths</Typography>
                     </CardContent>
