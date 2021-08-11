@@ -10,38 +10,38 @@ export function Cards({ data: {confirmed, recovered, deaths, lastUpdate }}) {
     console.log(2, recovered)
     return(
         <section className="cards-container">
-            <Grid container justify='center' spacing={2}  >
+            <Grid container justify-content='center' spacing={2}  >
                 <Grid item component={Card}>
                     <CardContent>
-                        <Typography color="textSecondary" gutterBottom>Infected</Typography>
+                        <Typography color="textSecondary" gutterBottom>Infectados</Typography>
                         <Typography variant="h5">
                             <CountUp start={0} duration={1.7} end={confirmed.value} separator="."/>
                         </Typography>
-                        <Typography color="textSecondary">{lastUpdate}</Typography>
-                        <Typography variant="body2">Number of cases</Typography>
+                        <Typography color="textSecondary">{new Date(lastUpdate).toLocaleDateString()}</Typography>
+                        <Typography variant="body2">Número de casos</Typography>
                     </CardContent>
                 </Grid>
 
                 <Grid item component={Card}>
                     <CardContent>
-                        <Typography color="textSecondary" gutterBottom>Recovered</Typography>
+                        <Typography color="textSecondary" gutterBottom>Recuperados</Typography>
                         <Typography variant="h5">
                           <CountUp start={0} duration={1.9} end={recovered.value} separator="." />
                         </Typography>
-                        <Typography color="textSecondary">Data</Typography>
-                        <Typography variant="body2">Number of recovered</Typography>
+                        <Typography color="textSecondary">{new Date(lastUpdate).toLocaleDateString()}</Typography>
+                        <Typography variant="body2">Número de recuperados</Typography>
                     </CardContent>
                 </Grid>
 
 
                 <Grid item component={Card}>
                     <CardContent>
-                        <Typography color="textSecondary" gutterBottom>Deaths</Typography>                        
+                        <Typography color="textSecondary" gutterBottom>Mortes</Typography>                        
                         <Typography variant="h5">
                           <CountUp start={0} duration={2.5} end={deaths.value} separator="." />
                         </Typography>
-                        <Typography color="textSecondary">Data</Typography>
-                        <Typography variant="body2">Number of deaths</Typography>
+                        <Typography color="textSecondary">{new Date(lastUpdate).toLocaleDateString()}</Typography>
+                        <Typography variant="body2">Número de mortes</Typography>
                     </CardContent>
                 </Grid>
             </Grid>
