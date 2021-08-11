@@ -13,7 +13,7 @@ export function Cards({ data: {confirmed, recovered, deaths, lastUpdate}}) {
                 <Grid item component={Card}>
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Infected</Typography>
-                        <Typography variant="h5">Data</Typography>
+                        <Typography variant="h5">{confirmed.value}</Typography>
                         <Typography color="textSecondary">Data</Typography>
                         <Typography variant="body2">Number of cases</Typography>
                     </CardContent>
@@ -22,7 +22,7 @@ export function Cards({ data: {confirmed, recovered, deaths, lastUpdate}}) {
                 <Grid item component={Card}>
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Recovered</Typography>
-                        <Typography variant="h5">Data</Typography>
+                        <Typography variant="h5">{recovered.value}</Typography>
                         <Typography color="textSecondary">Data</Typography>
                         <Typography variant="body2">Number of recovered</Typography>
                     </CardContent>
@@ -32,9 +32,9 @@ export function Cards({ data: {confirmed, recovered, deaths, lastUpdate}}) {
                 <Grid item component={Card}>
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Deaths</Typography>
-                        <Typography variant="h5">Data</Typography>
+                        <Typography variant="h5">{deaths.value}</Typography>
                         <Typography color="textSecondary">Data</Typography>
-                        <Typography variant="body2">Number of </Typography>
+                        <Typography variant="body2">Number of deaths</Typography>
                     </CardContent>
                 </Grid>
             </Grid>
