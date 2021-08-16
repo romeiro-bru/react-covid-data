@@ -24,11 +24,11 @@ function App() {
 
   return (
     <div className="App">
-     <h1>Covid-19 tracker!</h1>
-     <div className="container">
-      <CountrySelector data={data} />
-      <Cards data={data} />
-     </div>     
+      <h1>Covid-19 tracker!</h1>
+      <div className="container">
+        <CountrySelector data={data} />
+        <Cards data={data} />
+      </div>
     </div>
   );
 }

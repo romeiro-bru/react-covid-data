@@ -7,22 +7,21 @@ export function Cards({ data: {confirmed, recovered, deaths, lastUpdate }}) {
     if(!confirmed) {
         return 'loading..'
     }
-    console.log(2, recovered)
     return(
         <section className="cards-container">
             <Grid container justify-content='center' spacing={2}  >
-                <Grid item component={Card}>
+                <Grid item component={Card} xs={12} md={3} className="card-infected" >
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Infectados</Typography>
                         <Typography variant="h5">
-                            <CountUp start={0} duration={1.7} end={confirmed.value} separator="."/>
+                            <CountUp  start={0} duration={1.7} end={confirmed.value} separator="."/>
                         </Typography>
                         <Typography color="textSecondary">{new Date(lastUpdate).toLocaleDateString()}</Typography>
                         <Typography variant="body2">Número de casos</Typography>
                     </CardContent>
                 </Grid>
 
-                <Grid item component={Card}>
+                <Grid item component={Card} xs={12} md={3}>
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Recuperados</Typography>
                         <Typography variant="h5">
@@ -34,7 +33,7 @@ export function Cards({ data: {confirmed, recovered, deaths, lastUpdate }}) {
                 </Grid>
 
 
-                <Grid item component={Card}>
+                <Grid item component={Card} xs={12} md={3}>
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Mortes</Typography>                        
                         <Typography variant="h5">
