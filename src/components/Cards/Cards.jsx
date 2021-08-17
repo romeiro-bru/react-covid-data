@@ -14,7 +14,7 @@ export function Cards({ data: {confirmed, recovered, deaths, lastUpdate }}) {
                 <Grid item component={Card} xs={12} md={3} id="cards" className="card-infected" >
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Infectados</Typography>
-                        <Typography variant="h5">
+                        <Typography variant="h7">
                             <CountUp  start={0} duration={1.7} end={confirmed.value} separator="."/>
                         </Typography>
                         <Typography color="textSecondary">{new Date(lastUpdate).toLocaleDateString()}</Typography>
@@ -25,7 +25,7 @@ export function Cards({ data: {confirmed, recovered, deaths, lastUpdate }}) {
                 <Grid item component={Card} xs={12} md={3} id="cards" className="card-recovered">
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Recuperados</Typography>
-                        <Typography variant="h5">
+                        <Typography variant="h7">
                           <CountUp start={0} duration={1.9} end={recovered.value} separator="." />
                         </Typography>
                         <Typography color="textSecondary">{new Date(lastUpdate).toLocaleDateString()}</Typography>
@@ -37,7 +37,7 @@ export function Cards({ data: {confirmed, recovered, deaths, lastUpdate }}) {
                 <Grid item component={Card} xs={12} md={3} id="cards" className="card-deaths">
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Mortes</Typography>                        
-                        <Typography variant="h5">
+                        <Typography variant="h7">
                           <CountUp start={0} duration={2.5} end={deaths.value} separator="." />
                         </Typography>
                         <Typography color="textSecondary">{new Date(lastUpdate).toLocaleDateString()}</Typography>
