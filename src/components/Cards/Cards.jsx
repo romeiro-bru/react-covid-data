@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.scss';
+import './style.css';
 import CountUp from 'react-countup';
 import {Card, CardContent, Typography, Grid} from '@material-ui/core';
 
@@ -7,10 +7,11 @@ export function Cards({ data: {confirmed, recovered, deaths, lastUpdate }}) {
     if(!confirmed) {
         return 'loading..'
     }
+    console.log(lastUpdate)
     return(
         <section className="cards-container">
             <Grid container justify-content='center' spacing={2}  >
-                <Grid item component={Card} xs={12} md={3} className="card-infected" >
+                <Grid item component={Card} xs={12} md={3} id="cards" className="card-infected" >
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Infectados</Typography>
                         <Typography variant="h5">
@@ -21,7 +22,7 @@ export function Cards({ data: {confirmed, recovered, deaths, lastUpdate }}) {
                     </CardContent>
                 </Grid>
 
-                <Grid item component={Card} xs={12} md={3}>
+                <Grid item component={Card} xs={12} md={3} id="cards" className="card-recovered">
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Recuperados</Typography>
                         <Typography variant="h5">
@@ -33,7 +34,7 @@ export function Cards({ data: {confirmed, recovered, deaths, lastUpdate }}) {
                 </Grid>
 
 
-                <Grid item component={Card} xs={12} md={3}>
+                <Grid item component={Card} xs={12} md={3} id="cards" className="card-deaths">
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Mortes</Typography>                        
                         <Typography variant="h5">
