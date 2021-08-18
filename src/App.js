@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Cards } from './components/Cards/Cards';
+import { Charts } from './components/Charts/Charts';
 import { CountrySelector } from './components/CountrySelector/CountrySelector';
 import axios from 'axios';
 
-const url = "https://covid19.mathdro.id/api";
+export const url = "https://covid19.mathdro.id/api";
 
 function App() {
   const [data, setData] = useState([])
@@ -28,6 +29,7 @@ function App() {
      <div className="container">
       <CountrySelector data={data} />
       <Cards data={data} />
+      <Charts />
      </div>     
     </div>
   );

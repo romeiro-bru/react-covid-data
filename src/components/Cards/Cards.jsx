@@ -7,26 +7,25 @@ export function Cards({ data: {confirmed, recovered, deaths, lastUpdate }}) {
     if(!confirmed) {
         return 'loading..'
     }
-    console.log(lastUpdate)
     return(
         <section className="cards-container">
             <Grid container justify-content='center' spacing={2}  >
                 <Grid item component={Card} xs={12} md={3} id="cards" className="card-infected" >
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Infectados</Typography>
-                        <Typography variant="h7">
-                            <CountUp  start={0} duration={1.7} end={confirmed.value} separator="."/>
+                        <Typography variant="subtitle1">
+                            <strong><CountUp  start={0} duration={1.7} end={confirmed.value} separator="."/></strong>
                         </Typography>
                         <Typography color="textSecondary">{new Date(lastUpdate).toLocaleDateString()}</Typography>
                         <Typography variant="body2">Número de casos</Typography>
                     </CardContent>
                 </Grid>
 
-                <Grid item component={Card} xs={12} md={3} id="cards" className="card-recovered">
+                <Grid item component={Card} xs={12} md={3} id="cards" className="card-recovered" >
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Recuperados</Typography>
-                        <Typography variant="h7">
-                          <CountUp start={0} duration={1.9} end={recovered.value} separator="." />
+                        <Typography variant="subtitle1">
+                         <strong><CountUp start={0} duration={1.9} end={recovered.value} separator="." /></strong> 
                         </Typography>
                         <Typography color="textSecondary">{new Date(lastUpdate).toLocaleDateString()}</Typography>
                         <Typography variant="body2">Número de recuperados</Typography>
@@ -34,11 +33,11 @@ export function Cards({ data: {confirmed, recovered, deaths, lastUpdate }}) {
                 </Grid>
 
 
-                <Grid item component={Card} xs={12} md={3} id="cards" className="card-deaths">
+                <Grid item component={Card} xs={12} md={3} id="cards" className="card-deaths" >
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Mortes</Typography>                        
-                        <Typography variant="h7">
-                          <CountUp start={0} duration={2.5} end={deaths.value} separator="." />
+                        <Typography variant="subtitle1">
+                          <strong><CountUp start={0} duration={2.5} end={deaths.value} separator="." /></strong>
                         </Typography>
                         <Typography color="textSecondary">{new Date(lastUpdate).toLocaleDateString()}</Typography>
                         <Typography variant="body2">Número de mortes</Typography>
