@@ -8,7 +8,7 @@ export function Cards({ data: {confirmed, recovered, deaths, lastUpdate }}) {
         return 'loading..'
     }
     return(
-        <section className="cards-container">
+        <section className="container cards-container">
             <Grid container justify-content='center' spacing={2}  >
                 <Grid item component={Card} xs={12} md={3} id="cards" className="card-infected" >
                     <CardContent>
