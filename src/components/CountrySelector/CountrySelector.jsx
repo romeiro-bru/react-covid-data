@@ -4,6 +4,8 @@ import './style.css';
 export function CountrySelector({ data }) {
 
     return(
-        <h1>Country selector</h1>
+        <div className='container'>
+         <h1>Country selector</h1>
+        </div>
     )
 } 
