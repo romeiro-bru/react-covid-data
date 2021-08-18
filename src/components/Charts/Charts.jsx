@@ -27,14 +27,14 @@ export function Charts() {
                     data:dailyData.map((item) => {
                         return (item.confirmed.total)
                     }),
-                    label: 'Infected',
-                    borderColor: '#6666f3',
+                    label: 'Infectados',
+                    borderColor: '#b778ec',
                     fill: true
                 }, {
                     data:dailyData.map((item) => {
                         return (item.deaths.total)
                     }),
-                    label: 'Deaths',
+                    label: 'Mortes',
                     borderColor: '#f12d2d',
                     backgroundColor: 'rgba(255, 0, 0, 0.5)',
                     fill: true
@@ -44,7 +44,7 @@ export function Charts() {
     )
 
     return (
-        <section className="chart-container">
+        <section className="container chart-container">
             {lineChart}
         </section>
     )
