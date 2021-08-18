@@ -28,14 +28,14 @@ export function Charts() {
                         return (item.totalConfirmed)
                     }),
                     label: 'Infected',
-                    borderColor: '#333ff',
+                    borderColor: '#6666f3',
                     fill: true
                 }, {
                     data:dailyData.map((item) => {
                         return (item.deaths.total)
                     }),
                     label: 'Deaths',
-                    borderColor: 'red',
+                    borderColor: '#f12d2d',
                     backgroundColor: 'rgba(255, 0, 0, 0.5)',
                     fill: true
                 }]
