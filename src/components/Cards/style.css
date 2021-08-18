@@ -5,17 +5,8 @@
 #cards {
     margin: 0 2%;
 }
-
-.cards-container {
-    margin: 50px 0;
-}
-
 .card-infected  {
-    border-top: 12px solid #a3a3f8;
-}
-
-.card-recovered  {
-    border-top: 12px solid #83bb83;
+    border-top: 12px solid #d0b4e8;
 }
 
 .card-deaths  {
