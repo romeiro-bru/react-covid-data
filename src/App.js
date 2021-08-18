@@ -27,7 +27,7 @@ function App() {
     <div className="App">
      <h1>Covid-19 tracker!</h1>
      <div className="container">
-      <CountrySelector data={data} />
+      {/* <CountrySelector data={data} /> */}
       <Cards data={data} />
       <Charts />
      </div>     
