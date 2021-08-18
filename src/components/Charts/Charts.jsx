@@ -25,7 +25,7 @@ export function Charts() {
                 }),
                 datasets: [{
                     data:dailyData.map((item) => {
-                        return (item.totalConfirmed)
+                        return (item.confirmed.total)
                     }),
                     label: 'Infected',
                     borderColor: '#6666f3',
