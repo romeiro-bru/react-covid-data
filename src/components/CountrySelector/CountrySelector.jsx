@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+import NativeSelect from '@material-ui/core/NativeSelect';
 import axios from 'axios';
 import {url} from '../../App';
 import './style.css';
@@ -18,8 +18,7 @@ export function CountrySelector() {
 
     return(
         <FormControl className="country-form">
-            <Select>
-                <option defaultValue="global">Global</option>
+            <NativeSelect defaultValue="Brazil">
                 {countries.map((country, index) => {
                     return (
                         <option key={index} value={country.name}>
@@ -27,7 +26,7 @@ export function CountrySelector() {
                         </option>
                     )
                 })}
-            </Select>
+            </NativeSelect>
         </FormControl>
     )
 } 
