@@ -19,7 +19,7 @@ export function CountrySelector() {
     return(
         <FormControl className="country-form">
             <Select>
-                <option value="">Global</option>
+                <option defaultValue="global">Global</option>
                 {countries.map((country, index) => {
                     return (
                         <option key={index} value={country.name}>
