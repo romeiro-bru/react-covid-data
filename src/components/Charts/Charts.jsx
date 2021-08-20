@@ -12,7 +12,6 @@ export function Charts() {
         async function fetchDailyData() {
             const dailyResponse = await axios.get(`${url}/daily`)  
             setDailyData(dailyResponse.data)         
-            console.log(dailyData)
         }
         return fetchDailyData()
     }, [])
