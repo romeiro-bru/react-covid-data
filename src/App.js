@@ -20,14 +20,21 @@ function App() {
         lastUpdate: response.data.lastUpdate
           }
           setData(allData)
-        }
+        }        
         return fetchData()
       }, [])
       
       const handleCountryChange = (country) => {
         setSelectedCountry(country)
-        console.log(country)
+
+        let fetchSelectedCountryData = url
+
+        if(country) {
+          fetchSelectedCountryData = `${url}/countries/${country}`
+          console.log(country)
+        } 
     }
+
       return (
     <div className="App">
      <h1>Covid-19 tracker!</h1>
