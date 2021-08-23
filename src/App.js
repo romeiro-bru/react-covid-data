@@ -8,27 +8,32 @@ export const url = "https://covid19.mathdro.id/api";
 
 function App() {
   const [data, setData] = useState([])
-
+  const [selectedCountry, setSelectedCountry] = useState('')
+  
   useEffect(() => {
-      async function fetchData() {
-          const response = await axios.get(url)            
-          const allData = {
-              confirmed: response.data.confirmed,
-              recovered: response.data.recovered,
-              deaths: response.data.deaths,
-              lastUpdate: response.data.lastUpdate
+    async function fetchData() {
+      const response = await axios.get(url)            
+      const allData = {
+        confirmed: response.data.confirmed,
+        recovered: response.data.recovered,
+        deaths: response.data.deaths,
+        lastUpdate: response.data.lastUpdate
           }
           setData(allData)
-      }
-      return fetchData()
-  }, [])
-
-  return (
+        }
+        return fetchData()
+      }, [])
+      
+      const handleCountryChange = (country) => {
+        setSelectedCountry(country)
+        console.log(country)
+    }
+      return (
     <div className="App">
      <h1>Covid-19 tracker!</h1>
      <div className="container">
       <Cards data={data} />
-      <CountrySelector />
+      <CountrySelector  handleCountryChange={handleCountryChange} />
       <Charts />
      </div>     
     </div>

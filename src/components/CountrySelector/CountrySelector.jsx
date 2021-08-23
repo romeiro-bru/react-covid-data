@@ -5,13 +5,8 @@ import axios from 'axios';
 import {url} from '../../App';
 import './style.css';
 
-export function CountrySelector() {
+export function CountrySelector({handleCountryChange}) {
     const [countries, setCountries] = useState([])
-    const [selectedCountry, setSelectedCountry] = useState('')
-
-    const handleCountryChange = (e) => {
-        setSelectedCountry(e.target.value)
-    }
 
     useEffect(() => {
         async function fetchCountries() {
@@ -23,7 +18,7 @@ export function CountrySelector() {
 
     return(
         <FormControl className="country-form">
-            <NativeSelect onChange={handleCountryChange} defaultValue="Brazil">
+            <NativeSelect onChange={(e) => handleCountryChange(e.target.value)} defaultValue="">
                 {countries.map((country, index) => {
                     return (
                         <option key={index} value={country.name}>
