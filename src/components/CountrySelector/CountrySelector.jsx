@@ -7,6 +7,11 @@ import './style.css';
 
 export function CountrySelector() {
     const [countries, setCountries] = useState([])
+    const [selectedCountry, setSelectedCountry] = useState('')
+
+    const handleCountryChange = (e) => {
+        setSelectedCountry(e.target.value)
+    }
 
     useEffect(() => {
         async function fetchCountries() {
@@ -18,7 +23,7 @@ export function CountrySelector() {
 
     return(
         <FormControl className="country-form">
-            <NativeSelect defaultValue="Brazil">
+            <NativeSelect onChange={handleCountryChange} defaultValue="Brazil">
                 {countries.map((country, index) => {
                     return (
                         <option key={index} value={country.name}>
