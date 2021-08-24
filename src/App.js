@@ -10,38 +10,34 @@ function App() {
   const [data, setData] = useState([])
   const [selectedCountry, setSelectedCountry] = useState('')
   
+  const handleCountryChange = (country) => { 
+    setSelectedCountry(country)  
+  }
+
   useEffect(() => {
     async function fetchData() {
-      const response = await axios.get(url)            
-      const allData = {
-        confirmed: response.data.confirmed,
-        recovered: response.data.recovered,
-        deaths: response.data.deaths,
-        lastUpdate: response.data.lastUpdate
-          }
-          setData(allData)
-        }        
-        return fetchData()
-      }, [])
-      
-      const handleCountryChange = (country) => {
-        setSelectedCountry(country)
+      let fetchSelectedCountryData = `${url}/countries/${selectedCountry}`
 
-        let fetchSelectedCountryData = url
-
-        if(country) {
-          fetchSelectedCountryData = `${url}/countries/${country}`
-          console.log(country)
-        } 
+        const response = await axios.get(fetchSelectedCountryData)            
+        const allData = {
+          confirmed: response.data.confirmed,
+          recovered: response.data.recovered,
+          deaths: response.data.deaths,
+          lastUpdate: response.data.lastUpdate
+        }
+        setData(allData)
     }
+    return fetchData()
+  }, [selectedCountry])
+  
 
       return (
     <div className="App">
      <h1>Covid-19 tracker!</h1>
      <div className="container">
       <Cards data={data} />
-      <CountrySelector  handleCountryChange={handleCountryChange} />
-      <Charts />
+      <CountrySelector handleCountryChange={handleCountryChange} />
+      <Charts data={data} selectedCountry={selectedCountry} />
      </div>     
     </div>
   );
