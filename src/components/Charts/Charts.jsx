@@ -5,8 +5,10 @@ import { Line } from 'react-chartjs-2';
 
 import './style.css';
 
-export function Charts() {
+export function Charts({data, selectedCountry}) {
     const [dailyData, setDailyData] = useState([])
+    console.log(1, selectedCountry)
+    console.log(2, data)
 
     useEffect(() => {
         async function fetchDailyData() {
