@@ -3,7 +3,7 @@ import './style.css';
 import CountUp from 'react-countup';
 import {Card, CardContent, Typography, Grid} from '@material-ui/core';
 
-export function Cards({ data: {confirmed, recovered, deaths, lastUpdate }}) {
+export function Cards({ data: {confirmed, deaths, lastUpdate }}) {
     if(!confirmed) {
         return 'loading..'
     }
