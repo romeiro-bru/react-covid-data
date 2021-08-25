@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {url} from '../../App';
-import { Line } from 'react-chartjs-2';
+import { Line, Bar } from 'react-chartjs-2';
 
 import './style.css';
 
 export function Charts({data, selectedCountry}) {
     const [dailyData, setDailyData] = useState([])
-    console.log(1, selectedCountry)
-    console.log(2, data)
 
     useEffect(() => {
         async function fetchDailyData() {
@@ -44,9 +42,25 @@ export function Charts({data, selectedCountry}) {
         ) : null
     )
 
+    const barChart = (
+       typeof data.confirmed !== "undefined" ? (
+            <Bar data={{
+                labels: ['Infectados', 'Mortes'],
+                datasets: [{
+                    label: 'N° de Pessoas',
+                    backgroundColor: ['#d0b4e8', '#f48c8c'],
+                    data: [data.confirmed.value, data.deaths.value]
+                }],
+            }}
+            options={{
+                legend: {display: false},
+            }}
+             />) : null        
+    )
+
     return (
         <section className="container chart-container">
-            {lineChart}
+            {selectedCountry.length !==0 ? barChart : lineChart}
         </section>
     )
 } 
