@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {url} from '../../App';
-import { Line, Bar } from 'react-chartjs-2';
+import { Line, Doughnut } from 'react-chartjs-2';
 
 import './style.css';
 
@@ -18,6 +18,7 @@ export function Charts({data, selectedCountry}) {
 
     const lineChart = (
         dailyData.length !== 0 ? (
+            <section className="linechart-container">
             <Line data={{
                 labels: dailyData.map((item) => {
                     return (item.reportDate)
@@ -39,28 +40,31 @@ export function Charts({data, selectedCountry}) {
                     fill: true
                 }]
             }} />
+            </section>
         ) : null
     )
 
-    const barChart = (
+    const doughnutChart = (
        typeof data.confirmed !== "undefined" ? (
-            <Bar data={{
+           <section className="doughnut-container">
+            <Doughnut data={{
                 labels: ['Infectados', 'Mortes'],
                 datasets: [{
                     label: 'N° de Pessoas',
                     backgroundColor: ['#d0b4e8', '#f48c8c'],
+                    borderColor: ['#c090e8', '#f57272'],
+                    borderWidth: 2,
+                    barThickness: 150,
                     data: [data.confirmed.value, data.deaths.value]
                 }],
             }}
-            options={{
-                legend: {display: false},
-            }}
-             />) : null        
+             />
+             </section>) : null        
     )
 
     return (
-        <section className="container chart-container">
-            {selectedCountry.length !==0 ? barChart : lineChart}
+        <section className="container">
+            {selectedCountry.length !==0 ? doughnutChart : lineChart}
         </section>
     )
 } 

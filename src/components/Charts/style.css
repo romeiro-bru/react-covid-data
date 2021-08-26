@@ -1,5 +1,9 @@
-.chart-container {
+.linechart-container {
     display: flex;
     justify-content: center;
-    width: 65rem;
+    width: 70rem;
+}
+
+.doughnut-container{
+    width: 30rem;
 }
