@@ -8,10 +8,14 @@
     width: 65rem;
 }
 
+.toggle-section {
+    border: 1px solid pink;
+}
+
 .pie-container{
     width: 25rem;
 }
 
 .bar-container {
-    width: 45rem;
+    width: 49.7rem;
 }
