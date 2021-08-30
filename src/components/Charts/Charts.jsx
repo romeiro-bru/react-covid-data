@@ -4,7 +4,8 @@ import {url} from '../../App';
 import { Line, Pie, Bar } from 'react-chartjs-2';
 
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
+import IconButton from '@material-ui/core/IconButton';
+
 import BarChartIcon from '@material-ui/icons/BarChart';
 import PieChartIcon from '@material-ui/icons/PieChart';
 
@@ -20,13 +21,11 @@ export function Charts({data, selectedCountry}) {
 
     const toggleIconButton = (
        <>
-       <List>
-            <ListItem >
-                <ListItem button onClick={handleToggleIcon}>
+        <List>            
+                <IconButton button onClick={handleToggleIcon}>
                     {toggle ? <PieChartIcon color="primary" /> : <BarChartIcon color="secondary" />}              
-                </ListItem>
-            </ListItem>
-        </List>
+                </IconButton>
+            </List>
        </>
     ) 
 
@@ -105,7 +104,7 @@ export function Charts({data, selectedCountry}) {
      )
 
     return (
-        <section className="container">
+        <section className="container charts-container">
             {selectedCountry.length !==0 ? toggleIconButton : lineChart}
             {toggle ? pieChart : barChart}
         </section>
