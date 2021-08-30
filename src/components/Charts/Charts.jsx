@@ -1,12 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {url} from '../../App';
-import { Line, Pie } from 'react-chartjs-2';
+import { Line, Pie, Bar } from 'react-chartjs-2';
+
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import BarChartIcon from '@material-ui/icons/BarChart';
+import PieChartIcon from '@material-ui/icons/PieChart';
 
 import './style.css';
 
 export function Charts({data, selectedCountry}) {
     const [dailyData, setDailyData] = useState([])
+    const [toggle, setToggle] = useState(true)
+
+    const handleToggleIcon = () => {
+         setToggle(!toggle)
+    }
+
+    const toggleIconButton = (
+       <>
+       <List>
+            <ListItem >
+                <ListItem button onClick={handleToggleIcon}>
+                    {toggle ? <PieChartIcon color="primary" /> : <BarChartIcon color="secondary" />}              
+                </ListItem>
+            </ListItem>
+        </List>
+       </>
+    ) 
 
     useEffect(() => {
         async function fetchDailyData() {
@@ -63,9 +85,29 @@ export function Charts({data, selectedCountry}) {
              </section>) : null        
     )
 
+    const barChart = (
+        typeof data.confirmed !== "undefined" ? (
+            <section className="bar-container">
+             <Bar data={{
+                 labels: ['Infectados', 'Mortes'],
+                 datasets: [{
+                     label: 'N° de Pessoas',
+                     backgroundColor: ['#d0b4e8', '#f48c8c'],
+                     borderColor: ['#c090e8', '#f57272'],
+                     borderWidth: 2,
+                     barThickness: 150,
+                     data: [data.confirmed.value, data.deaths.value]
+                 }]
+             }}
+             
+              />
+              </section>) : null        
+     )
+
     return (
         <section className="container">
-            {selectedCountry.length !==0 ? pieChart : lineChart}
+            {selectedCountry.length !==0 ? toggleIconButton : lineChart}
+            {toggle ? pieChart : barChart}
         </section>
     )
 } 
