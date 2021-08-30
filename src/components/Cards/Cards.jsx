@@ -5,7 +5,7 @@ import {Card, CardContent, Typography, Grid} from '@material-ui/core';
 
 export function Cards({ data: {confirmed, deaths, lastUpdate }}) {
     if(!confirmed) {
-        return 'loading..'
+        return 'Selecione um país para verificar os dados.'
     }
     return(
         <section className="container cards-container">
@@ -14,7 +14,7 @@ export function Cards({ data: {confirmed, deaths, lastUpdate }}) {
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Infectados</Typography>
                         <Typography variant="subtitle1">
-                            <strong><CountUp  start={0} duration={1.7} end={confirmed.value} separator="."/></strong>
+                            <strong><CountUp  start={0} duration={1.5} end={confirmed.value} separator="."/></strong>
                         </Typography>
                         <Typography color="textSecondary">{new Date(lastUpdate).toLocaleDateString()}</Typography>
                         <Typography variant="body2">Número de casos</Typography>
@@ -25,7 +25,7 @@ export function Cards({ data: {confirmed, deaths, lastUpdate }}) {
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Mortes</Typography>                        
                         <Typography variant="subtitle1">
-                          <strong><CountUp start={0} duration={2.5} end={deaths.value} separator="." /></strong>
+                          <strong><CountUp start={0} duration={2.3} end={deaths.value} separator="." /></strong>
                         </Typography>
                         <Typography color="textSecondary">{new Date(lastUpdate).toLocaleDateString()}</Typography>
                         <Typography variant="body2">Número de mortes</Typography>
