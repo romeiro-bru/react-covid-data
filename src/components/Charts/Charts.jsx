@@ -44,9 +44,9 @@ export function Charts({data, selectedCountry}) {
         ) : null
     )
 
-    const doughnutChart = (
+    const pieChart = (
        typeof data.confirmed !== "undefined" ? (
-           <section className="doughnut-container">
+           <section className="pie-container">
             <Pie data={{
                 labels: ['Infectados', 'Mortes'],
                 datasets: [{
@@ -65,7 +65,7 @@ export function Charts({data, selectedCountry}) {
 
     return (
         <section className="container">
-            {selectedCountry.length !==0 ? doughnutChart : lineChart}
+            {selectedCountry.length !==0 ? pieChart : lineChart}
         </section>
     )
 } 
