@@ -1,9 +1,17 @@
+.charts-container {
+    min-height: 30rem;
+}
+
 .linechart-container {
     display: flex;
     justify-content: center;
-    width: 70rem;
+    width: 65rem;
 }
 
 .pie-container{
-    width: 30rem;
+    width: 25rem;
+}
+
+.bar-container {
+    width: 45rem;
 }
