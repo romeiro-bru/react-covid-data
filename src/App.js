@@ -35,8 +35,8 @@ function App() {
     <div className="App">
      <h1>Covid-19 tracker!</h1>
      <div className="container">
-      <CountrySelector handleCountryChange={handleCountryChange} />
       <Cards data={data} />
+      <CountrySelector handleCountryChange={handleCountryChange} />
       <Charts data={data} selectedCountry={selectedCountry} />
      </div>     
     </div>
