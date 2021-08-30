@@ -3,7 +3,6 @@ import axios from 'axios';
 import {url} from '../../App';
 import { Line, Pie, Bar } from 'react-chartjs-2';
 
-import List from '@material-ui/core/List';
 import IconButton from '@material-ui/core/IconButton';
 
 import BarChartIcon from '@material-ui/icons/BarChart';
@@ -20,13 +19,9 @@ export function Charts({data, selectedCountry}) {
     }
 
     const toggleIconButton = (
-       <>
-        <List>            
-                <IconButton button onClick={handleToggleIcon}>
-                    {toggle ? <PieChartIcon color="primary" /> : <BarChartIcon color="secondary" />}              
-                </IconButton>
-            </List>
-       </>
+        <IconButton button onClick={handleToggleIcon}>
+            {toggle ? <PieChartIcon color="primary" /> : <BarChartIcon color="secondary" />}              
+        </IconButton>
     ) 
 
     useEffect(() => {
