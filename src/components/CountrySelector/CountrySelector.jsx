@@ -17,16 +17,21 @@ export function CountrySelector({handleCountryChange}) {
     }, [])
 
     return(
-        <FormControl className="country-form">
-            <NativeSelect onChange={(e) => handleCountryChange(e.target.value)} defaultValue="">
-                {countries.map((country, index) => {
-                    return (
-                        <option key={index} value={country.name}>
-                            {country.name}
-                        </option>
-                    )
-                })}
-            </NativeSelect>
-        </FormControl>
+        <section className="country-form">
+            <FormControl>
+                <NativeSelect onChange={(e) => handleCountryChange(e.target.value)} defaultValue="">
+                <option value="global">Global</option>
+                    {countries.map((country, index) => {
+                        return (
+                            <option key={index} value={country.name}>
+                                {country.name}
+                                {" - "}
+                                {country.iso2}
+                            </option>
+                        )
+                    })}
+                </NativeSelect>
+            </FormControl>
+        </section>
     )
 } 

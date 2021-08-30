@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {url} from '../../App';
-import { Line, Doughnut } from 'react-chartjs-2';
+import { Line, Pie } from 'react-chartjs-2';
 
 import './style.css';
 
@@ -47,7 +47,7 @@ export function Charts({data, selectedCountry}) {
     const doughnutChart = (
        typeof data.confirmed !== "undefined" ? (
            <section className="doughnut-container">
-            <Doughnut data={{
+            <Pie data={{
                 labels: ['Infectados', 'Mortes'],
                 datasets: [{
                     label: 'N° de Pessoas',
@@ -56,8 +56,9 @@ export function Charts({data, selectedCountry}) {
                     borderWidth: 2,
                     barThickness: 150,
                     data: [data.confirmed.value, data.deaths.value]
-                }],
+                }]
             }}
+            
              />
              </section>) : null        
     )
