@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {url} from '../../App';
-import { Line, Pie, Bar } from 'react-chartjs-2';
+import { Pie, Bar } from 'react-chartjs-2';
 
 import IconButton from '@material-ui/core/IconButton';
 
@@ -35,7 +35,7 @@ export function Charts({data, selectedCountry}) {
     const lineChart = (
         dailyData.length !== 0 ? (
             <section className="linechart-container">
-            <Line data={{
+            <Bar data={{
                 labels: dailyData.map((item) => {
                     return (item.reportDate)
                 }),
