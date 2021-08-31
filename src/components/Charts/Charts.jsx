@@ -1,12 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {url} from '../../App';
-import { Line, Pie } from 'react-chartjs-2';
+import { Line, Pie, Bar } from 'react-chartjs-2';
+
+import IconButton from '@material-ui/core/IconButton';
+
+import BarChartIcon from '@material-ui/icons/BarChart';
+import PieChartIcon from '@material-ui/icons/PieChart';
 
 import './style.css';
 
 export function Charts({data, selectedCountry}) {
     const [dailyData, setDailyData] = useState([])
+    const [toggle, setToggle] = useState(true)
+
+    const handleToggleIcon = () => {
+         setToggle(!toggle)
+    }
+
+    const toggleIconButton = (
+        <IconButton onClick={handleToggleIcon} >
+            {toggle ? <PieChartIcon fontSize="large" color="primary" /> : <BarChartIcon fontSize="large" color="secondary" />}              
+        </IconButton>
+    ) 
 
     useEffect(() => {
         async function fetchDailyData() {
@@ -44,9 +60,9 @@ export function Charts({data, selectedCountry}) {
         ) : null
     )
 
-    const doughnutChart = (
+    const pieChart = (
        typeof data.confirmed !== "undefined" ? (
-           <section className="doughnut-container">
+           <section className="pie-container">
             <Pie data={{
                 labels: ['Infectados', 'Mortes'],
                 datasets: [{
@@ -63,9 +79,29 @@ export function Charts({data, selectedCountry}) {
              </section>) : null        
     )
 
+    const barChart = (
+        typeof data.confirmed !== "undefined" ? (
+            <section className="bar-container">
+             <Bar data={{
+                 labels: ['Infectados', 'Mortes'],
+                 datasets: [{
+                     label: 'Infectados',
+                     backgroundColor: ['#d0b4e8', '#f48c8c'],
+                     borderColor: ['#c090e8', '#f57272'],
+                     borderWidth: 2,
+                     barThickness: 150,
+                     data: [data.confirmed.value, data.deaths.value]
+                 }]
+             }}
+             
+              />
+              </section>) : null        
+     )
+
     return (
-        <section className="container">
-            {selectedCountry.length !==0 ? doughnutChart : lineChart}
+        <section className="container charts-container">
+            {selectedCountry.length !==0 ? toggleIconButton : lineChart}
+            {toggle ? pieChart : barChart}
         </section>
     )
 } 
