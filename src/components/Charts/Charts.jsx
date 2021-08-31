@@ -44,15 +44,14 @@ export function Charts({data, selectedCountry}) {
                         return (item.confirmed.total)
                     }),
                     label: 'Infectados',
-                    borderColor: '#b778ec',
+                    backgroundColor: '#b778ec',
                     fill: true
                 }, {
                     data:dailyData.map((item) => {
                         return (item.deaths.total)
                     }),
                     label: 'Mortes',
-                    borderColor: '#f12d2d',
-                    backgroundColor: 'rgba(255, 0, 0, 0.5)',
+                    backgroundColor: '#f12d2d',
                     fill: true
                 }]
             }} />
