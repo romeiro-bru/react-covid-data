@@ -32,9 +32,9 @@ export function Charts({data, selectedCountry}) {
         return fetchDailyData()
     }, [])
 
-    const lineChart = (
+    const globalBarChart = (
         dailyData.length !== 0 ? (
-            <section className="linechart-container">
+            <section className="globalbarchart-container">
             <Bar data={{
                 labels: dailyData.map((item) => {
                     return (item.reportDate)
@@ -99,7 +99,7 @@ export function Charts({data, selectedCountry}) {
 
     return (
         <section className="container charts-container">
-            {selectedCountry.length !==0 ? toggleIconButton : lineChart}
+            {selectedCountry.length !==0 ? toggleIconButton : globalBarChart}
             {toggleChart ? pieChart : barChart}
         </section>
     )

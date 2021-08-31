@@ -5,7 +5,7 @@ import {Card, CardContent, Typography, Grid} from '@material-ui/core';
 
 export function Cards({ data: {confirmed, deaths, lastUpdate }}) {
     if(!confirmed) {
-        return 'Selecione um país para verificar os dados.'
+        return <p>Casos de COVID-19 no mundo.<br/>Selecione um país para verificar os dados.</p>
     }
     return(
         <section className="container cards-container">

@@ -2,10 +2,11 @@
     min-height: 30rem;
 }
 
-.linechart-container {
+.globalbarchart-container {
     display: flex;
     justify-content: center;
-    width: 65rem;
+    width: 97vw;
+    margin: 0.8rem;
 }
 
 .pie-container{
