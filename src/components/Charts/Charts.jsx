@@ -12,15 +12,15 @@ import './style.css';
 
 export function Charts({data, selectedCountry}) {
     const [dailyData, setDailyData] = useState([])
-    const [toggle, setToggle] = useState(true)
+    const [toggleChart, setToggleChart] = useState(true)
 
     const handleToggleIcon = () => {
-         setToggle(!toggle)
+         setToggleChart(!toggleChart)
     }
 
     const toggleIconButton = (
         <IconButton onClick={handleToggleIcon} >
-            {toggle ? <PieChartIcon fontSize="large" color="primary" /> : <BarChartIcon fontSize="large" color="secondary" />}              
+            {toggleChart ? <PieChartIcon fontSize="large" color="primary" /> : <BarChartIcon fontSize="large" color="secondary" />}              
         </IconButton>
     ) 
 
@@ -101,7 +101,7 @@ export function Charts({data, selectedCountry}) {
     return (
         <section className="container charts-container">
             {selectedCountry.length !==0 ? toggleIconButton : lineChart}
-            {toggle ? pieChart : barChart}
+            {toggleChart ? pieChart : barChart}
         </section>
     )
 } 
