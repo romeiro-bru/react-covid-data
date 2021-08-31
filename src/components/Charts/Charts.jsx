@@ -19,8 +19,8 @@ export function Charts({data, selectedCountry}) {
     }
 
     const toggleIconButton = (
-        <IconButton button onClick={handleToggleIcon}>
-            {toggle ? <PieChartIcon color="primary" /> : <BarChartIcon color="secondary" />}              
+        <IconButton onClick={handleToggleIcon} >
+            {toggle ? <PieChartIcon fontSize="large" color="primary" /> : <BarChartIcon fontSize="large" color="secondary" />}              
         </IconButton>
     ) 
 
@@ -85,7 +85,7 @@ export function Charts({data, selectedCountry}) {
              <Bar data={{
                  labels: ['Infectados', 'Mortes'],
                  datasets: [{
-                     label: 'N° de Pessoas',
+                     label: 'Infectados',
                      backgroundColor: ['#d0b4e8', '#f48c8c'],
                      borderColor: ['#c090e8', '#f57272'],
                      borderWidth: 2,
