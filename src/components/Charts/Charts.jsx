@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {url} from '../../App';
-import { Line, Pie, Bar } from 'react-chartjs-2';
+import { Pie, Bar } from 'react-chartjs-2';
 
 import IconButton from '@material-ui/core/IconButton';
 
@@ -12,15 +12,15 @@ import './style.css';
 
 export function Charts({data, selectedCountry}) {
     const [dailyData, setDailyData] = useState([])
-    const [toggle, setToggle] = useState(true)
+    const [toggleChart, setToggleChart] = useState(true)
 
     const handleToggleIcon = () => {
-         setToggle(!toggle)
+         setToggleChart(!toggleChart)
     }
 
     const toggleIconButton = (
         <IconButton onClick={handleToggleIcon} >
-            {toggle ? <PieChartIcon fontSize="large" color="primary" /> : <BarChartIcon fontSize="large" color="secondary" />}              
+            {toggleChart ? <PieChartIcon fontSize="large" color="primary" /> : <BarChartIcon fontSize="large" color="secondary" />}              
         </IconButton>
     ) 
 
@@ -32,10 +32,10 @@ export function Charts({data, selectedCountry}) {
         return fetchDailyData()
     }, [])
 
-    const lineChart = (
+    const globalBarChart = (
         dailyData.length !== 0 ? (
-            <section className="linechart-container">
-            <Line data={{
+            <section className="globalbarchart-container">
+            <Bar data={{
                 labels: dailyData.map((item) => {
                     return (item.reportDate)
                 }),
@@ -44,15 +44,14 @@ export function Charts({data, selectedCountry}) {
                         return (item.confirmed.total)
                     }),
                     label: 'Infectados',
-                    borderColor: '#b778ec',
+                    backgroundColor: '#b778ec',
                     fill: true
                 }, {
                     data:dailyData.map((item) => {
                         return (item.deaths.total)
                     }),
                     label: 'Mortes',
-                    borderColor: '#f12d2d',
-                    backgroundColor: 'rgba(255, 0, 0, 0.5)',
+                    backgroundColor: '#f12d2d',
                     fill: true
                 }]
             }} />
@@ -100,8 +99,8 @@ export function Charts({data, selectedCountry}) {
 
     return (
         <section className="container charts-container">
-            {selectedCountry.length !==0 ? toggleIconButton : lineChart}
-            {toggle ? pieChart : barChart}
+            {selectedCountry.length !==0 ? toggleIconButton : globalBarChart}
+            {toggleChart ? pieChart : barChart}
         </section>
     )
 } 
