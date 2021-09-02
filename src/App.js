@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Cards } from './components/Cards/Cards';
+import { CountryTable } from './components/CountryTable/CountryTable';
 import { Charts } from './components/Charts/Charts';
 import { CountrySelector } from './components/CountrySelector/CountrySelector';
 import axios from 'axios';
@@ -35,7 +35,7 @@ function App() {
     <div className="App">
      <h1>Covid-19 tracker!</h1>
      <div className="container">
-      <Cards data={data} />
+      <CountryTable data={data} selectedCountry={selectedCountry} />
       <CountrySelector handleCountryChange={handleCountryChange} />
       <Charts data={data} selectedCountry={selectedCountry} />
      </div>     
