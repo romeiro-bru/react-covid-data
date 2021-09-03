@@ -9,6 +9,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { withStyles } from '@material-ui/core/styles';
+import { layouts } from 'chart.js';
 
 export function CountryTable({ selectedCountry, data: {confirmed, deaths, lastUpdate }}) {
     if(!confirmed) {
@@ -19,11 +20,14 @@ export function CountryTable({ selectedCountry, data: {confirmed, deaths, lastUp
         head: {
           backgroundColor: theme.palette.common.black,
           color: theme.palette.common.white,
+          fontSize: 15,
           fontWeight: 800,
+          fontFamily: "Lato",
         },
         body: {
-          fontSize: 15,
           padding: 10,
+          fontSize: 16,
+          fontFamily: "Lato",
         },
       }))(TableCell);
 
@@ -34,8 +38,8 @@ export function CountryTable({ selectedCountry, data: {confirmed, deaths, lastUp
                     <TableHead>
                         <TableRow>
                             <StyledTableCell>País</StyledTableCell>
-                            <StyledTableCell>Infectados</StyledTableCell>
-                            <StyledTableCell>Mortes</StyledTableCell>
+                            <StyledTableCell>N° de Infectados</StyledTableCell>
+                            <StyledTableCell>N° de Mortes</StyledTableCell>
                             <StyledTableCell>Ultima Atualização</StyledTableCell>
                         </TableRow>
                     </TableHead>
@@ -44,10 +48,10 @@ export function CountryTable({ selectedCountry, data: {confirmed, deaths, lastUp
                             <TableRow>
                                 <StyledTableCell align="center" component="th" scope="row">{selectedCountry}</StyledTableCell>
                                 <StyledTableCell align="center" component="th" scope="row">
-                                    <strong><CountUp  start={0} duration={1.5} end={confirmed.value} separator="."/></strong>
+                                    <strong><CountUp  start={0} duration={1.9} end={confirmed.value} separator="."/></strong>
                                 </StyledTableCell>
                                 <StyledTableCell align="center" component="th" scope="row">
-                                    <strong><CountUp start={0} duration={2.3} end={deaths.value} separator="." /></strong>
+                                    <strong><CountUp start={0} duration={1.3} end={deaths.value} separator="." /></strong>
                                 </StyledTableCell>
                                 <StyledTableCell align="center" component="th" scope="row">{new Date(lastUpdate).toLocaleDateString()}</StyledTableCell>
                             </TableRow>
