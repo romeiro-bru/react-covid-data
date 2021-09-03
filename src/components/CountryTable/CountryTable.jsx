@@ -9,6 +9,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { withStyles } from '@material-ui/core/styles';
+import { layouts } from 'chart.js';
 
 export function CountryTable({ selectedCountry, data: {confirmed, deaths, lastUpdate }}) {
     if(!confirmed) {
@@ -19,11 +20,14 @@ export function CountryTable({ selectedCountry, data: {confirmed, deaths, lastUp
         head: {
           backgroundColor: theme.palette.common.black,
           color: theme.palette.common.white,
+          fontSize: 15,
           fontWeight: 800,
+          fontFamily: "Lato",
         },
         body: {
-          fontSize: 15,
           padding: 10,
+          fontSize: 16,
+          fontFamily: "Lato",
         },
       }))(TableCell);
 
