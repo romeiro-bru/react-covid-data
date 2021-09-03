@@ -20,7 +20,7 @@ export function Charts({data, selectedCountry}) {
 
     const toggleIconButton = (
         <IconButton onClick={handleToggleIcon} >
-            {toggleChart ? <PieChartIcon fontSize="large" color="primary" /> : <BarChartIcon fontSize="large" color="secondary" />}              
+            {toggleChart ? <PieChartIcon fontSize="large" color="primary" /> : <BarChartIcon fontSize="large" color="primary" />}              
         </IconButton>
     ) 
 
