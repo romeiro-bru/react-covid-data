@@ -43,8 +43,12 @@ export function CountryTable({ selectedCountry, data: {confirmed, deaths, lastUp
                     <TableBody>
                             <TableRow>
                                 <StyledTableCell align="center" component="th" scope="row">{selectedCountry}</StyledTableCell>
-                                <StyledTableCell align="center" component="th" scope="row">{confirmed.value}</StyledTableCell>
-                                <StyledTableCell align="center" component="th" scope="row">{deaths.value}</StyledTableCell>
+                                <StyledTableCell align="center" component="th" scope="row">
+                                    <strong><CountUp  start={0} duration={1.5} end={confirmed.value} separator="."/></strong>
+                                </StyledTableCell>
+                                <StyledTableCell align="center" component="th" scope="row">
+                                    <strong><CountUp start={0} duration={2.3} end={deaths.value} separator="." /></strong>
+                                </StyledTableCell>
                                 <StyledTableCell align="center" component="th" scope="row">{new Date(lastUpdate).toLocaleDateString()}</StyledTableCell>
                             </TableRow>
                         
