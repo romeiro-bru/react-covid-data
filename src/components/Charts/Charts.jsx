@@ -4,7 +4,6 @@ import {url} from '../../App';
 import { Pie, Bar } from 'react-chartjs-2';
 
 import IconButton from '@material-ui/core/IconButton';
-
 import BarChartIcon from '@material-ui/icons/BarChart';
 import PieChartIcon from '@material-ui/icons/PieChart';
 
@@ -24,10 +23,11 @@ export function Charts({data, selectedCountry}) {
         </IconButton>
     ) 
 
+    // fetched data to global chart
     useEffect(() => {
         async function fetchDailyData() {
             const dailyResponse = await axios.get(`${url}/daily`)  
-            setDailyData(dailyResponse.data)         
+            setDailyData(dailyResponse.data) 
         }
         return fetchDailyData()
     }, [])

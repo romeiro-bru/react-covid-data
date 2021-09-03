@@ -34,8 +34,8 @@ export function CountryTable({ selectedCountry, data: {confirmed, deaths, lastUp
                     <TableHead>
                         <TableRow>
                             <StyledTableCell>País</StyledTableCell>
-                            <StyledTableCell>Infectados</StyledTableCell>
-                            <StyledTableCell>Mortes</StyledTableCell>
+                            <StyledTableCell>N° de Infectados</StyledTableCell>
+                            <StyledTableCell>N° de Mortes</StyledTableCell>
                             <StyledTableCell>Ultima Atualização</StyledTableCell>
                         </TableRow>
                     </TableHead>
