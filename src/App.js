@@ -4,6 +4,8 @@ import { CountryTable } from './components/CountryTable/CountryTable';
 import { CountrySelector } from './components/CountrySelector/CountrySelector';
 import { Charts } from './components/Charts/Charts';
 
+import virus from "./assets/images/virus.png";
+
 export const url = "https://covid19.mathdro.id/api";
 
 function App() {
@@ -34,7 +36,10 @@ function App() {
 
       return (
     <div className="App">
-     <h1>Covid-19 tracker!</h1>
+     <h1>
+       C<img src={virus} />
+       VID-19
+      </h1>
      <div className="container">
       <CountryTable data={data} selectedCountry={selectedCountry} />
       <CountrySelector handleCountryChange={handleCountryChange} />

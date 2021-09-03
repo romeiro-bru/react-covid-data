@@ -15,6 +15,11 @@ body {
   text-align: center;
 }
 
+h1 img {
+  width: 3.2rem;
+  margin-bottom: -0.8rem;
+}
+
 .container {
   display: flex;
   align-items: center;
