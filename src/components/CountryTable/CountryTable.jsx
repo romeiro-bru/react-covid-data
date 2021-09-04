@@ -9,7 +9,6 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { withStyles } from '@material-ui/core/styles';
-import { layouts } from 'chart.js';
 
 export function CountryTable({ selectedCountry, data: {confirmed, deaths, lastUpdate }}) {
     if(!confirmed) {

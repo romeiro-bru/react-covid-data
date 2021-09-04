@@ -37,7 +37,7 @@ function App() {
       return (
     <div className="App">
      <h1>
-       C<img src={virus} />
+       C<img src={virus} alt="o"/>
        VID-19
       </h1>
      <div className="container">
