@@ -1,7 +1,7 @@
 ## Covid Data
 
 ## Funcionalidades 👾 
-* Verificar casos globais de infectados e mortes
+* Verificar casos globais de infecções e mortes por COVID-19
 * Selecionar país para verificar dados
 * Visualizar dados do país selecionado em gráfico de pizza e barra
 
