@@ -26,6 +26,6 @@ Execute o seguinte comando para iniciar a aplicação no ambiente de desenvolvim
 ```yarn start```
 <br>
 
-No navegador, introduza:
+No navegador, inserir:
 <br>
 ```http://localhost:3000```
