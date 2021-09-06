@@ -52,7 +52,7 @@ export function CountryTable({ selectedCountry, data: {confirmed, deaths, lastUp
                                 <StyledTableCell align="center" component="th" scope="row">
                                     <strong><CountUp start={0} duration={1.3} end={deaths.value} separator="." /></strong>
                                 </StyledTableCell>
-                                <StyledTableCell align="center" component="th" scope="row">{new Date(lastUpdate).toLocaleDateString()}</StyledTableCell>
+                                <StyledTableCell align="center" component="th" scope="row">{new Date(lastUpdate).toLocaleDateString("pt-br")}</StyledTableCell>
                             </TableRow>
                         
                     </TableBody>
