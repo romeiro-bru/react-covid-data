@@ -17,7 +17,7 @@ Prerequisite to run the following commands <strong>[Node.js](https://nodejs.org/
                            <strong>[Yarn](https://yarnpkg.com/)</strong>.
 <br>
 ```
-git clone https://github.com/romeiro-bru/covid-tracker.git
+git clone https://github.com/romeiro-bru/react-covid-data.git
 yarn install
 ```
 
