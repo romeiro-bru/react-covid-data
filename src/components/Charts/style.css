@@ -11,10 +11,12 @@
 
 .pie-container{
     width: 25rem;
+    max-width: 98vw;
     margin: 2rem 0;
 }
 
 .bar-container {
     width: 49.8rem;
+    max-width: 98vw;
     margin: 2rem 0;
 }
