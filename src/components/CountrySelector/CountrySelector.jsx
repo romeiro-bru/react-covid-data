@@ -20,7 +20,7 @@ export function CountrySelector({handleCountryChange}) {
         <section className="country-form">
             <FormControl>
                 <NativeSelect onChange={(e) => handleCountryChange(e.target.value)} defaultValue="">
-                <option value="global">Global</option>
+                <option value="">Global</option>
                     {countries.map((country, index) => {
                         return (
                             <option key={index} value={country.name}>
