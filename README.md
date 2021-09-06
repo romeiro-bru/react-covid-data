@@ -1,26 +1,31 @@
-## Covid Tracker 
+## Covid Data
 
-## Features 👾 
+## Funcionalidades 👾 
+* Verificar casos globais de infectados e mortes
+* Selecionar país para verificar dados
+* Visualizar dados do país selecionado em gráfico de pizza e barra
 
-
-## Technologies :mag_right:
+## Tecnologias :mag_right:
 * React :atom:
-* Css :nail_care:
+* CSS 💅
 
-## Api Reference
+## Instalação / Inicialização 👨‍🏭
 
-
-## Installing / Getting started 👨‍🏭
-
-Prerequisite to run the following commands <strong>[Node.js](https://nodejs.org/en/download/)</strong>, 
+É necessário ter instalado <strong>[Node.js](https://nodejs.org/en/download/)</strong>, 
                            <strong>[Git](https://git-scm.com/downloads)</strong>, 
                            <strong>[Yarn](https://yarnpkg.com/)</strong>.
 <br>
-```
-git clone https://github.com/romeiro-bru/react-covid-data.git
-yarn install
-```
+```git clone https://github.com/romeiro-bru/react-covid-data.git```
 
-Run in the project directory ```yarn start```
+Instalar dependências
+<br>
+```yarn install```
 
-Open ```http://localhost:3000``` in your browser
+Execute o seguinte comando para iniciar a aplicação no ambiente de desenvolvimento:
+<br>
+```yarn start```
+<br>
+
+No navegador, introduza:
+<br>
+```http://localhost:3000```
