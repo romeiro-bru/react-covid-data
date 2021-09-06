@@ -8,6 +8,8 @@
 ## Tecnologias :mag_right:
 * React :atom:
 * CSS 💅
+* Material-UI  🧑‍🔧ℹ️ 
+* react-chartjs-2 📊
 
 ## Instalação / Inicialização 👨‍🏭
 
