@@ -24,9 +24,9 @@ export function CountrySelector({handleCountryChange}) {
                     {countries.map((country, index) => {
                         return (
                             <option key={index} value={country.name}>
-                                {country.name}
-                                {" - "}
                                 {country.iso2}
+                                {" - "}
+                                {country.name}
                             </option>
                         )
                     })}
