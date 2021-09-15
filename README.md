@@ -1,4 +1,8 @@
 ## Covid Data
+> A aplicação permite verificar casos globais de infecções e mortes por COVID-19,
+> <br>
+>selecionar  um país e verificar dados em gráficos.
+
 
 ![Screenshot from 2021-09-06 18-01-32](https://user-images.githubusercontent.com/56081906/132260581-19e7e85e-c357-4102-896d-65911e0c9332.png)
 
