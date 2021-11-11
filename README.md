@@ -1,12 +1,14 @@
-## Covid Data
+<h1 align="center">Covid Data</h1>
+
 > A aplicação permite verificar casos globais de infecções e mortes por COVID-19,
 > <br>
 >selecionar  um país e verificar dados em gráficos.
+><br>
+>[Deploy do projeto](https://nervous-torvalds-7c723c.netlify.app/)
 
-
-![Screenshot from 2021-09-06 18-01-32](https://user-images.githubusercontent.com/56081906/132260581-19e7e85e-c357-4102-896d-65911e0c9332.png)
-
-![Screenshot from 2021-09-06 18-01-51](https://user-images.githubusercontent.com/56081906/132260566-437abbc9-87a1-4563-b2e5-f5ddbed767bd.png)
+<p  align="center">
+  <img  src="https://user-images.githubusercontent.com/56081906/141357742-9d22e1f2-ded8-4dcb-9960-e0434b69d80f.gif"  height="450" alt="blood">
+</p>
 
 ## Funcionalidades 👾 
 * Verificar casos globais de infecções e mortes por COVID-19
