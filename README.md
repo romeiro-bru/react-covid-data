@@ -1,5 +1,11 @@
 <h1 align="center">Covid Data</h1>
 
+<p>
+  <img  src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"  height="25" alt="html">
+  <img  src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"  height="25" alt="css">
+  <img  src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"  height="25" alt="react">
+</p>
+
 > A aplicação permite verificar casos globais de infecções e mortes por COVID-19,
 > <br>
 >selecionar  um país e verificar dados em gráficos.
